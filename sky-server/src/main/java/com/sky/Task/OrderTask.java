@@ -23,7 +23,6 @@ public class OrderTask {
      * 处理超时订单
      */
     @Scheduled(cron = "0 * * * * ? ")
-//    @Scheduled(cron = "0/5 * * * * ?")
     public void processOrder() {
         log.info("定时处理超时订单 {} ", LocalDateTime.now());
         List<Orders> orderList = orderMapper.getByStatusAndOrderTimeLT(Orders.PENDING_PAYMENT,
@@ -44,7 +43,6 @@ public class OrderTask {
      * 处理派送订单
      */
     @Scheduled(cron = "0 0 1 * * ?")
-//    @Scheduled(cron = "0/5 * * * * ?")
     public void processDeliverOrder() {
         log.info("定时处理派送中的订{}", LocalDateTime.now());
         List<Orders> orderList = orderMapper.getByStatusAndOrderTimeLT(Orders.DELIVERY_IN_PROGRESS,
