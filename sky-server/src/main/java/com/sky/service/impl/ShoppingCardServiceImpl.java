@@ -54,8 +54,9 @@ public class ShoppingCardServiceImpl implements ShoppingCardService {
             }else{
                 log.error("暂时不能添加套餐");
             }
+            shoppingCardMapper.insert(shoppingCart);
         }
-        shoppingCardMapper.insert(shoppingCart);
+
     }
 
     /**
