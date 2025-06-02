@@ -9,6 +9,7 @@ import com.sky.vo.OrderVO;
 public interface OrderSevice {
     /**
      * 用户下单
+     *
      * @param ordersSubmitDTO
      * @return
      */
@@ -16,6 +17,7 @@ public interface OrderSevice {
 
     /**
      * 用户端分页查询
+     *
      * @param page
      * @param pageSize
      * @param status
@@ -25,6 +27,7 @@ public interface OrderSevice {
 
     /**
      * 获取订单详情
+     *
      * @param id
      * @return
      */
@@ -32,18 +35,21 @@ public interface OrderSevice {
 
     /**
      * 取消订单
+     *
      * @param id
      */
     void UserCancelById(Long id);
 
     /**
      * 再来一单
+     *
      * @param id
      */
     void repetition(Long id);
 
     /**
      * 条件搜索订单
+     *
      * @param ordersPageQueryDTO
      * @return
      */
@@ -51,6 +57,7 @@ public interface OrderSevice {
 
     /**
      * 订单状态数量统计
+     *
      * @return
      */
     OrderStatisticsVO statistics();
@@ -75,4 +82,18 @@ public interface OrderSevice {
      * @param ordersCancelDTO
      */
     void cancel(OrdersCancelDTO ordersCancelDTO) throws Exception;
+
+    /**
+     * 派送订单
+     *
+     * @param id
+     */
+    void delivery(Long id);
+
+    /**
+     * 完成订单
+     *
+     * @param id
+     */
+    void complete(Long id);
 }
